@@ -21,3 +21,4 @@ pids
 *.pid.lock
 
 .vscode
+.DS_Store

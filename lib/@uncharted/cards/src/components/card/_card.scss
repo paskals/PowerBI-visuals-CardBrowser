@@ -5,8 +5,29 @@
 @import '../variables';
 
 .flip-tag-hidden {
-    .flip-tag, .back .flip-tag {
+
+    .flip-tag,
+    .back .flip-tag {
         display: none;
+    }
+}
+
+.meta-data-content-header {
+    display: flex;
+    flex-wrap: wrap;
+
+    .source-icon {
+        display: flex;
+        flex-direction: row-reverse;
+        //flex-grow: 1;
+        height: 25px;
+        width: 40px;
+        padding: 6px;
+        background: #f6f6f6 no-repeat 50% 50% / 16px 16px;
+        border-radius: 8px;
+        background-size: contain;
+        margin: 1px;
+        z-index: 999;
     }
 }
 
@@ -21,9 +42,11 @@
         .card-image {
             display: none;
         }
+
         .card-body h1 {
             margin-right: 13px;
         }
+
         .metadata-content {
             .image {
                 display: none;
@@ -36,9 +59,11 @@
             border: none;
             box-shadow: $card-shadow;
         }
+
         .card-content-container {
             padding-left: $card-margin * 2;
             left: -(2 * $card-margin);
+
             &:after {
                 width: calc(100% - #{$card-margin * 2});
             }
@@ -49,10 +74,12 @@
         .back {
             box-shadow: none;
         }
+
         .flipped {
             .back {
                 box-shadow: $card-shadow;
             }
+
             .front {
                 box-shadow: none;
             }
@@ -74,6 +101,7 @@
         transition: opacity $card-expanding-animation;
         opacity: 1;
         z-index: 1;
+
         &.card-reader-container {
             opacity: 0;
             z-index: 0;
@@ -111,7 +139,7 @@
         height: 28px;
     }
 
-    .card-image + .card-body {
+    .card-image+.card-body {
         padding-top: 8px;
     }
 
@@ -141,7 +169,7 @@
         flex-direction: column;
         overflow: hidden;
         overflow-wrap: break-word;
-        padding: 16px 16px 8px 16px;
+        padding: 6px;
     }
 
     // Card icon
@@ -181,40 +209,57 @@
             right: 0;
             top: 0;
             height: 100%;
-            width: 5em;
+            width: 1em;
         }
 
         .title-box {
             font-size: 13px;
             max-height: #{$title-line-height * 2};
             white-space: normal;
+            align-items: center;
 
             h1 {
                 font-size: inherit;
+                width: 3em;
+            }
+
+
+
+            &.overflow-box {
+                display: flex;
+                flex-grow: 1;
             }
 
             &.overflow:after {
                 top: $title-line-height;
                 height: $title-line-height;
             }
+
         }
 
         .subtitle-box {
             margin-top: 2px;
+
             .subtitle {
                 margin: 0;
                 display: inline;
             }
+
+            display: flex;
+            white-space: nowrap;
+            width: 100%;
         }
     }
 
     .meta-data-table {
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 12px;
         vertical-align: bottom;
+
         table {
-            table-layout: fixed;
+            table-layout: auto;
         }
+
         .value-box {
             &.overflow:after {
                 width: 15px;
@@ -222,14 +267,15 @@
         }
 
         .key-box {
-            max-width: 38.2%;
-            text-align: right;
+            max-width: 33%;
+            text-align: left;
             padding-right: 2px;
             color: #bbb;
         }
 
         .meta-data-box {
-            overflow: hidden;
+
+            //overflow: hidden;
             .value {
                 padding-left: 2px;
             }
@@ -249,6 +295,7 @@
         background-color: #F2F2F2;
         display: flex;
         flex-wrap: nowrap;
+
         .image {
             width: 50px;
             height: 50px;
@@ -263,12 +310,14 @@
 
 
 .uncharted-cards-card {
+
     .flipper,
     .front,
     .back {
         width: 100%;
         height: 100%;
     }
+
     .flipper {
         position: relative;
     }
@@ -277,13 +326,16 @@
 // Flipping animation
 .uncharted-cards-card.flip-container {
     perspective: 1000px;
+
     .flipper {
         transition: $card-flipping-animation-duration;
         transform-style: preserve-3d;
+
         &.flipped {
             transform: rotateY(180deg);
         }
     }
+
     .front,
     .back {
         backface-visibility: hidden;
@@ -291,10 +343,12 @@
         top: 0;
         left: 0;
     }
+
     .front {
         z-index: 2;
         transform: rotateY(0deg);
     }
+
     .back {
         transform: rotateY(180deg);
     }

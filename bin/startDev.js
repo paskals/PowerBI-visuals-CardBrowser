@@ -24,8 +24,8 @@ const config = {
         'lib/@uncharted/strippets/sass',
     ],
     server: {
-        cert: 'certs/PowerBICustomVisualTest_public.crt', 
-        key: 'certs/PowerBICustomVisualTest_private.key',
+        cert: 'certs/cert_file.cert', 
+        key: 'certs/key_file.key',
         port: 8080
     }
 };
@@ -107,7 +107,8 @@ const startServer = () => {
 
     https.createServer(options, app).listen(config.server.port, (err) => {
         console.info('Server listening on port ', config.server.port + '.');
-    });
+        console.log(err);
+    }).on("tlsClientError", (err)=>console.log(err));
 };
 
 const start = () => {
@@ -117,6 +118,6 @@ const start = () => {
     updateStatus();
     startWatchers();
     startServer();
-};
+}; 
 
 start();

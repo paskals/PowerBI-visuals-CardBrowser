@@ -1,12 +1,10 @@
 {
   "visual": {
-    "name": "CardBrowser",
-    "displayName": "Card Browser",
-    "guid": "CardBrowser8D7CFFDA2E7E400C9474F41B9EDBBA58",
+    "name": "CardBrowserMod",
+    "displayName": "Card Browser - Modified",
+    "guid": "CardBrowser8D7CFFDA2E7E400C9474F41B9EDBBA59",
     "visualClassName": "CardBrowserVisual",
-    "description": "ESSEX Card Browser",
-    "supportUrl": "http://community.powerbi.com",
-    "gitHubUrl": "https://github.com/Microsoft/PowerBI-visuals-CardBrowser"
+    "description": "ESSEX Card Browser"
   },
   "author": {
     "name": "Microsoft",
